@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+</head>
+<body>
+  <h1>Enter a harrassing word</h1>
+  <div ng-app="" ng-init="textBox='hello, harasser'">
+        <input type="text" ng-model="textBox" id="input">
+        <button id="searchBtn" ng-model="searchBtn">Search</button>
+    <script>
+        (function(){
+          var input = document.getElementById('input');
+          var searchBtn = document.getElementById('searchBtn');
+          searchBtn.addEventListener('click', onClick);
+          var onClick = function(){
+            var str = input.value;
+            console.log(str);
+          };
+        }());
+    </script>
+  </div>
+</body>
+</html>
