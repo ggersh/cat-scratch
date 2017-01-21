@@ -18,7 +18,7 @@
             <h1>CatScratch</h1>
         </div>
     </div>
-	<div style="background:#d0d6e0" class="container main-frame" ng-app="CatApp" ng-controller="mainController" ng-init="init()" ng-app="" ng-init="textBox='hello, harasser'">
+	<div style="background:#37243f" class="container main-frame" ng-app="CatApp" ng-controller="mainController" ng-init="init()" ng-app="" ng-init="textBox='hello, harasser'">
 		<div class="search-box row-fluid form-inline"></div>
         <div class="results-top"></div>
         <div class="results-container">
@@ -28,8 +28,14 @@
 	</div>
 	<h1 id="wrapper" style="text-align: center">Enter a harassing word</h1>
     <div id="wrapper" style="text-align: center" class="center-block" ng-app="" ng-init="textBox='hello, harasser'">
-          <input type="text" ng-model="textBox" id="input"name="input"/>
-          <button id="searchBtn" name="searchBtn" ng-model="searchBtn">Search</button>
+
+		  <input class="searchboxer" type="text" ng-model="textBox" id="input"name="input" placeholder="Hello, Harasser" ></input>
+          <!-- <button id="searchBtn" name="searchBtn" ng-model="searchBtn">Search</button> -->
+
+		  <!-- BUTTON -->
+
+		  <button style="margin:-1px 7px 0 2px" class="button">Search</button>
+
       <script>
           (function(){
             var input = document.getElementById('input');
