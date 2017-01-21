@@ -4,19 +4,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
 </head>
 <body>
-  <h1>Enter a harrassing word</h1>
+  <h1>Enter a harassing word</h1>
   <div ng-app="" ng-init="textBox='hello, harasser'">
-        <input type="text" ng-model="textBox" id="input">
-        <button id="searchBtn" ng-model="searchBtn">Search</button>
+        <input type="text" ng-model="textBox" id="input"name="input"/>
+        <button id="searchBtn" name="searchBtn" ng-model="searchBtn">Search</button>
     <script>
         (function(){
           var input = document.getElementById('input');
           var searchBtn = document.getElementById('searchBtn');
-          searchBtn.addEventListener('click', onClick);
+          console.log(input.value);
           var onClick = function(){
             var str = input.value;
             console.log(str);
           };
+          searchBtn.addEventListener('click', onClick);
         }());
     </script>
   </div>
