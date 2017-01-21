@@ -7,11 +7,8 @@ const pug = require('pug');
 var app = express();
 var Schema = mongoose.Schema;
 var tweetSchema = new Schema({
-    username: String,
-    profileLink: String,
-    profilePicture: String,
-    originalTweet: String,
-    newTweet: String
+    _id: Schema.Types.ObjectId,
+    tweet_text1: String
 })
 var example = mongoose.model("example", tweetSchema);
 
@@ -22,10 +19,14 @@ app.set('view engine', 'pug');
 
 app.get('/', function(req, res) {
     example.find({}, 'username', function(err, data) {
-        console.log(data);
+        if (err) {
+            console.log(err);
+        } else {
+            console.log(data);
+        }
     });
     res.render('index', {
-        tweets: data
+
     });
 });
 
