@@ -26,5 +26,22 @@
         </div>
         <div class="results-bottom"></div>
 	</div>
+	<h1>Enter a harassing word</h1>
+    <div ng-app="" ng-init="textBox='hello, harasser'">
+          <input type="text" ng-model="textBox" id="input"name="input"/>
+          <button id="searchBtn" name="searchBtn" ng-model="searchBtn">Search</button>
+      <script>
+          (function(){
+            var input = document.getElementById('input');
+            var searchBtn = document.getElementById('searchBtn');
+            console.log(input.value);
+            var onClick = function(){
+              var str = input.value;
+              console.log(str);
+            };
+            searchBtn.addEventListener('click', onClick);
+          }());
+      </script>
+    </div>
 </body>
 </html>
