@@ -1,0 +1,20 @@
+{
+  "name": "catscratchapp",
+  "version": "1.0.0",
+  "description": "Web app for CatScratch",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cat"
+  ],
+  "author": "Nic Siebenaller",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.6.1",
+    "angular-aria": "^1.6.1",
+    "angular-material": "^1.1.1",
+    "mongodb": "^2.2.21"
+  }
+}
