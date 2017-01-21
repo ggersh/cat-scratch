@@ -2,7 +2,7 @@
   "name": "catscratchapp",
   "version": "1.0.0",
   "description": "Web app for CatScratch",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,6 +15,10 @@
     "angular": "^1.6.1",
     "angular-aria": "^1.6.1",
     "angular-material": "^1.1.1",
-    "mongodb": "^2.2.21"
+    "body-parser": "^1.16.0",
+    "express": "^4.14.0",
+    "mongodb": "^2.2.21",
+    "mongoose": "^4.7.7",
+    "morgan": "^1.7.0"
   }
 }
