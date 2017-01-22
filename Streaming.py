@@ -11,8 +11,8 @@ import re
 import json
 
 from pymongo import MongoClient
-#client = MongoClient('mongodb://admin:admin@catscratchdb-shard-00-00-pvqvd.mongodb.net:27017,catscratchdb-shard-00-01-pvqvd.mongodb.net:27017,catscratchdb-shard-00-02-pvqvd.mongodb.net:27017/admin?ssl=true&replicaSet=CatScratchDB-shard-0&authSource=admin')
-client = MongoClient('mongodb://localhost:27017/')
+client = MongoClient('mongodb://admin:admin@catscratchdb-shard-00-00-pvqvd.mongodb.net:27017,catscratchdb-shard-00-01-pvqvd.mongodb.net:27017,catscratchdb-shard-00-02-pvqvd.mongodb.net:27017/admin?ssl=true&replicaSet=CatScratchDB-shard-0&authSource=admin')
+#client = MongoClient('mongodb://localhost:27017/')
 
 db = client['catscratch']
 tweets = db['tweets']
@@ -71,6 +71,7 @@ class listener(StreamListener):
                      "whore": '&#x1f431',
                      "butt": '&#x1f431',
                      "dumb": '&#x1f680',
+                     "idiot": '&#x1f680'
                      }
         self.tweetCount = 0
         #self.tweet_dict = {}
@@ -84,13 +85,10 @@ class listener(StreamListener):
 
 
     def on_data(self,data):
-        #print"*******DATA*********\n"
-        #print data+"\n"
         json_tweet = json.loads(data)
         tweet = json_tweet["text"]
         tweet_dict = {}
         #tweet = data.split(',"text":"')[1].split('","source')[0]
-
         new_tweet = self.multiple_replace(tweet)
 
         users_dict = json_tweet["entities"]
@@ -104,22 +102,17 @@ class listener(StreamListener):
         profile_picture_url = user_id["profile_image_url"]
 
         #self.tweets.append(data)
-        # print(new_tweet)
         self.tweetCount = self.tweetCount + 1
-        tweet_dict['screen name' + str(self.tweetCount)] = screen_name
-        tweet_dict['profile picture' + str(self.tweetCount)] = profile_picture_url
-        tweet_dict['old_tweet' + str(self.tweetCount)] = tweet
-        tweet_dict['tweet_text' + str(self.tweetCount)] = new_tweet
-        # print "********tweet_dict*********\n"
-        # print tweet_dict
+        tweet_dict['screen_name'] = screen_name
+        tweet_dict['profile_picture'] = profile_picture_url
+        tweet_dict['old_tweet'] = tweet
+        tweet_dict['tweet_text'] = new_tweet
         # saveFile = open('newTwitDB.json','a')
         # saveFile.write(new_tweet)
         # saveFile.write('\n')
         # saveFile.close()
-
         tweets.insert_one(tweet_dict)
-
-        return self.tweetCount < 30
+        return self.tweetCount < 50
 
 
     def on_error(self,status):
