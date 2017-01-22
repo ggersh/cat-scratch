@@ -71,7 +71,8 @@ class listener(StreamListener):
                      "whore": '&#x1f431',
                      "butt": '&#x1f431',
                      "dumb": '&#x1f680',
-                     "idiot": '&#x1f680'
+                     "idiot": '&#x1f680',
+                     "Michigan": '&#x1f680'                     
                      }
         self.tweetCount = 0
         #self.tweet_dict = {}
