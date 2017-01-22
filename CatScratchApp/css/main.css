@@ -7,6 +7,7 @@ h1, h2, h3 {
     font-family: 'Archivo Narrow', sans-serif;
 }
 .banner {
+
     background-color: #0074cd;
     color: #FFF;
     height: 100px;
@@ -145,7 +146,7 @@ h1, h2, h3 {
     margin-top: 10px;
 }
 #kitty{
-    position:absolute;
+    position:fixed;
    top:0;
    right:0;
 }
@@ -333,7 +334,10 @@ td.text-right {
     border-radius: 50%;
 }
 .Maintext{
-
     font-size: 24px;
+}
+body {
 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
