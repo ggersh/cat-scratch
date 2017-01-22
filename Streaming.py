@@ -26,11 +26,11 @@ class listener(StreamListener):
     def __init__(self):
 
         self.tweets = []
-        self.dict = {"stupid":'&#x1f431',
-                     "Stupid":'&#x1f431',
+        self.dict = {"stupid":'🐱',
+                     "Stupid":'🐱',
                      "STUPID":'&#x1f431',
                      "stupid.":'&#x1f431',
-                     "fuck": '&#x1f680',
+                     "fuck": '🐱',
                      "fuck.":'&#x1f319',
                      "Fuck":'&#x1f319',
                      "FUCK":'&#x1f319',
@@ -72,7 +72,7 @@ class listener(StreamListener):
                      "butt": '&#x1f431',
                      "dumb": '&#x1f680',
                      "idiot": '&#x1f680',
-                     "Michigan": '&#x1f680'                     
+                     "Michigan": '&#x1f680'
                      }
         self.tweetCount = 0
         #self.tweet_dict = {}
