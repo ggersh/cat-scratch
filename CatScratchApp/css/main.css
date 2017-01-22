@@ -143,3 +143,8 @@ h1, h2, h3 {
     height: 28px;
     margin-top: 10px;
 }
+#kitty{
+    position:absolute;
+   top:0;
+   right:0;
+}
