@@ -10,27 +10,23 @@ var tweetSchema = new Schema({
     _id: Schema.Types.ObjectId,
     tweet_text1: String
 })
-var example = mongoose.model("example", tweetSchema);
+var example = mongoose.model("tweet", tweetSchema);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(morgan('dev'));
 app.set('view engine', 'pug');
-
+mongoose.connect(config.dbURL);
 app.get('/', function(req, res) {
-    example.find({}, 'username', function(err, data) {
-        if (err) {
-            console.log(err);
-        } else {
-            console.log(data);
-        }
+    example.find({}).select('tweet_text1').exec(function(err, data) {
+        console.log(data);
     });
     res.render('index', {
+
 
     });
 });
 
-mongoose.connect(config.dbURL);
 
 app.listen(config.port, function(err) {
     if (err) {
