@@ -114,6 +114,7 @@
             var searchBtn = document.getElementById('searchBtn');
             console.log(input.value);
             var onClick = function(){
+                window.location.reload();
               var str = input.value;
               console.log(str);
             };
@@ -124,18 +125,6 @@
 
 
 
-        <script>
-            (function() {
-                var input = document.getElementById('input');
-                var searchBtn = document.getElementById('searchBtn');
-                console.log(input.value);
-                var onClick = function() {
-                    var str = input.value;
-                    console.log(str);
-                };
-                searchBtn.addEventListener('click', onClick);
-            }());
-        </script>
 
     </div>
 </body>
