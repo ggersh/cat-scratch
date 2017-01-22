@@ -1,15 +1,17 @@
 doctype html
 html
   head
-    meta(charset='utf-8')
-    meta(http-equiv='X-UA-Compatible', content='IE=edge')
     title CatScratch
     // INCLUDE REQUIRED THIRD PARTY LIBRARY JAVASCRIPT AND CSS
-    link(rel='stylesheet', href='css/bootstrap.min.css')
-    link(rel='stylesheet', href='css/bootstrap-responsive.min.css')
-    link(rel='stylesheet', href='css/main.css')
-  body
+    meta(charset='utf-8')
+    link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", rel="stylesheet", integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u", crossorigin="anonymous")
+    link(rel='stylesheet', href='/css/bootstrap-responsive.min.css')
+    link(rel='stylesheet', href='/css/main.css')
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js", integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa", crossorigin="anonymous")
+  body(background='/Nebula HD Wallpaper - Samsung Galaxy S5 HD Wallpapers Free.jpg')
     .banner
+      img#kitty(src='/img/cat1.png', alt='', style='width:304px;height:228px;')
       .container
         h1 CatScratch
     .container.main-frame(style='background:#37243f')
@@ -18,17 +20,48 @@ html
       .results-container
         ul.episode-list
       .results-bottom
-    h1#wrapper(style='text-align: center') Enter a harassing word
+    // <h1 id="wrapper" style="text-align: center"><font color="white">Enter a harassing word</font></h1>
     #wrapper.center-block(style='text-align: center')
-      input#input.searchboxer(type='text', name='input', placeholder='Hello, Harasser')
+      input#input.searchboxer(type='text', name='input', placeholder='Enter a keyword...')
       button#searchBtn.button(name='searchBtn', style='margin:-1px 7px 0 2px') Search
-      p= tweet
+      .spacer
+      // <div class="spaceForTweets"></div>
+      .table-title
+        // <h3 class="DTitle">Tweets</h3>
+      table.table-fill
+        thead
+          tr
+            th.Maintext Profile Picture
+            th.Maintext @Username
+            th.Maintext Old Tweet
+            th.Maintext New Tweet
+        tbody.table-hover
+          each tweet in tweets
+            tr
+              td
+                img.propics(src=tweet.profile_picture, alt='Go Bucks', style='width:100 height:100')
+              td.text-left= '@' + tweet.screen_name
+              td.text-left= tweet.old_tweet
+              td.text-left= tweet.tweet_text
+
+      #spacerBot
       script.
         (function(){
         var input = document.getElementById('input');
         var searchBtn = document.getElementById('searchBtn');
         console.log(input.value);
         var onClick = function(){
+        var str = input.value;
+        console.log(str);
+        };
+        searchBtn.addEventListener('click', onClick);
+        }());
+      script.
+        (function() {
+        var input = document.getElementById('input');
+        var searchBtn = document.getElementById('searchBtn');
+        console.log(input.value);
+        var onClick = function() {
         var str = input.value;
         console.log(str);
         };
