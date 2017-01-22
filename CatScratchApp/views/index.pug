@@ -1,15 +1,14 @@
 doctype html
 html
   head
-    meta(charset='utf-8')
-    meta(http-equiv='X-UA-Compatible', content='IE=edge')
     title CatScratch
     // INCLUDE REQUIRED THIRD PARTY LIBRARY JAVASCRIPT AND CSS
     link(rel='stylesheet', href='css/bootstrap.min.css')
     link(rel='stylesheet', href='css/bootstrap-responsive.min.css')
     link(rel='stylesheet', href='css/main.css')
-  body
+  body(background='Nebula HD Wallpaper - Samsung Galaxy S5 HD Wallpapers Free.jpg')
     .banner
+      img#kitty(src='img/cat1.png', alt='', style='width:304px;height:228px;')
       .container
         h1 CatScratch
     .container.main-frame(style='background:#37243f')
@@ -18,16 +17,94 @@ html
       .results-container
         ul.episode-list
       .results-bottom
-    h1#wrapper(style='text-align: center') Enter a harassing word
+    // <h1 id="wrapper" style="text-align: center"><font color="white">Enter a harassing word</font></h1>
     #wrapper.center-block(style='text-align: center')
-      input#input.searchboxer(type='text', name='input', placeholder='Hello, Harasser')
+      input#input.searchboxer(type='text', name='input', placeholder='Enter a keyword...')
       button#searchBtn.button(name='searchBtn', style='margin:-1px 7px 0 2px') Search
+      .spacer
+      // <div class="spaceForTweets"></div>
+      .table-title
+        // <h3 class="DTitle">Tweets</h3>
+      table.table-fill
+        thead
+          tr
+            th.Maintext Profile Picture
+            th.Maintext @Username
+            th.Maintext Old Tweet
+            th.Maintext New Tweet
+        tbody.table-hover
+          tr
+            td
+              img.propics(src='https://twitter.com/ggersh/profile_image?size=original', alt='Mountain View', style='width:100height:100')
+            td.text-left @ggersh
+            td.text-left  sadfjkhsadkfljhsadkjfhaslkjdfh
+            td.text-left  sadfjhsadkjfhsakjdhflkasjdfhkd
+          tr
+            td
+              img.propics(src='/Users/Gershkowitz/Desktop/cat-scratch/CatScratchApp/img/twitpic.jpeg', alt='Mountain View', style='width:100height:100')
+            td.text-left @gershkowitz
+            td.text-left  sdafjkahsdkljfhaskljdfhdaskljhf
+            td.text-left  sadjfhkasjdhflksajhfdlkajsdhfkljashdf
+          tr
+            td
+              img.propics(src='/Users/Gershkowitz/Desktop/cat-scratch/CatScratchApp/img/twitpic.jpeg', alt='Mountain View', style='width:100height:100')
+            td.text-left @swagmon3y
+            td.text-left  asdjfhasdlkjfhklajsdhfkjsadhf
+            td.text-left  sadjkfskjldhfaksjdhfkljashdkfjhsaldkfj
+          tr
+            td
+              img.propics(src='/Users/Gershkowitz/Desktop/cat-scratch/CatScratchApp/img/twitpic.jpeg', alt='Mountain View', style='width:100height:100')
+            td.text-left @sdasdbasmndbmansbd
+            td.text-left  sdakajfhskfjhslkdjfhlaksjdfhalskjdhflaksjdhfklasjhd
+            td.text-left  dsafjhsdlkfjhaslkjdhfkasjdhfksjahddksjhfaksdjhfsdkljfh
+          tr
+            td
+              img.propics(src='/Users/Gershkowitz/Desktop/cat-scratch/CatScratchApp/img/twitpic.jpeg', alt='Mountain View', style='width:100height:100')
+            td.text-left @fjahkfjah
+            td.text-left  sdakfjhaskljdhfklsajhdfkljashdflkjdd
+            td.text-left  safkjhsakdljfhaskljdhflksajdhflkasjhdf
+          tr
+            td
+              img.propics(src='/Users/Gershkowitz/Desktop/cat-scratch/CatScratchApp/img/twitpic.jpeg', alt='Mountain View', style='width:100height:100')
+            td.text-left @fjahkfjah
+            td.text-left  sdakfjhaskljdhfklsajhdfkljashdflkjdd
+            td.text-left  safkjhsakdljfhaskljdhflksajdhflkasjhdf
+          tr
+            td
+              img.propics(src='/Users/Gershkowitz/Desktop/cat-scratch/CatScratchApp/img/twitpic.jpeg', alt='Mountain View', style='width:100height:100')
+            td.text-left @fjahkfjah
+            td.text-left  sdakfjhaskljdhfklsajhdfkljashdflkjdd
+            td.text-left  safkjhsakdljfhaskljdhflksajdhflkasjhdf
+          tr
+            td
+              img.propics(src='/Users/Gershkowitz/Desktop/cat-scratch/CatScratchApp/img/twitpic.jpeg', alt='Mountain View', style='width:100height:100')
+            td.text-left @fjahkfjah
+            td.text-left  sdakfjhaskljdhfklsajhdfkljashdflkjdd
+            td.text-left  safkjhsakdljfhaskljdhflksajdhflkasjhdf
+          tr
+            td
+              img.propics(src='/Users/Gershkowitz/Desktop/cat-scratch/CatScratchApp/img/twitpic.jpeg', alt='Mountain View', style='width:100height:100')
+            td.text-left @fjahkfjah
+            td.text-left  sdakfjhaskljdhfklsajhdfkljashdflkjdd
+            td.text-left  safkjhsakdljfhaskljdhflksajdhflkasjhdf
+      #spacerBot
       script.
         (function(){
         var input = document.getElementById('input');
         var searchBtn = document.getElementById('searchBtn');
         console.log(input.value);
         var onClick = function(){
+        var str = input.value;
+        console.log(str);
+        };
+        searchBtn.addEventListener('click', onClick);
+        }());
+      script.
+        (function() {
+        var input = document.getElementById('input');
+        var searchBtn = document.getElementById('searchBtn');
+        console.log(input.value);
+        var onClick = function() {
         var str = input.value;
         console.log(str);
         };
