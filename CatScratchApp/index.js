@@ -12,13 +12,17 @@ mongoose.connect('mongodb://admin:admin@catscratchdb-shard-00-00-pvqvd.mongodb.n
 var Tweet = mongoose.model('tweets', {
     text: String
 });
-
+var st;
+var stud;
 app.get('/', function(req, res) {
-    Tweet.find({}).select('text').exec(function(err, data) {
+    Tweet.find({}).select('text').lean().exec(function(err, data) {
         console.log(data);
+        // st = printjson(data);
+        stud = data;
+        console.log(stud);
     });
     res.render('index', {
-        tweets: data[0].text
+        tweet: stud[0].text
     });
 });
 
