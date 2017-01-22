@@ -20,9 +20,11 @@ var Tweet = mongoose.model('tweets', {
 
 app.get('/', function(req, res) {
     Tweet.find({}, function(err, data) {
-        res.render('index', {
-            tweets: data
-        });
+      var tweeties = data;
+      tweeties[0].tweet_text.replace("}}cat{{", "🐱");
+      res.render('index', {
+        tweets: data
+      });
     });
 });
 
