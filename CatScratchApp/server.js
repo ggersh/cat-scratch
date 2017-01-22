@@ -7,29 +7,26 @@ const pug = require('pug');
 var app = express();
 var Schema = mongoose.Schema;
 var tweetSchema = new Schema({
-    username: String,
-    profileLink: String,
-    profilePicture: String,
-    originalTweet: String,
-    newTweet: String
+    _id: Schema.Types.ObjectId,
+    tweet_text1: String
 })
-var example = mongoose.model("example", tweetSchema);
+var example = mongoose.model("tweet", tweetSchema);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(morgan('dev'));
 app.set('view engine', 'pug');
-
+mongoose.connect(config.dbURL);
 app.get('/', function(req, res) {
-    example.find({}, 'username', function(err, data) {
+    example.find({}).select('tweet_text1').exec(function(err, data) {
         console.log(data);
     });
     res.render('index', {
-        tweets: data
+
+
     });
 });
 
-mongoose.connect(config.dbURL);
 
 app.listen(config.port, function(err) {
     if (err) {

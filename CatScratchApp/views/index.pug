@@ -1,29 +1,27 @@
 doctype html
 html
   head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
     title CatScratch
     // INCLUDE REQUIRED THIRD PARTY LIBRARY JAVASCRIPT AND CSS
-    script(type='text/javascript', src='js/angular.min.js')
     link(rel='stylesheet', href='css/bootstrap.min.css')
     link(rel='stylesheet', href='css/bootstrap-responsive.min.css')
-    // INCLUDE APPLICATION SPECIFIC CSS AND JAVASCRIPT
-    script(type='text/javascript', src='js/app/app.js')
-    script(type='text/javascript', src='js/app/controllers/mainController.js')
     link(rel='stylesheet', href='css/main.css')
   body
     .banner
       .container
         h1 CatScratch
-    .container.main-frame(style='background:#37243f', ng-app='CatApp', ng-controller='mainController', ng-init='init()')
+    .container.main-frame(style='background:#37243f')
       .search-box.row-fluid.form-inline
       .results-top
       .results-container
         ul.episode-list
       .results-bottom
     h1#wrapper(style='text-align: center') Enter a harassing word
-    #wrapper.center-block(style='text-align: center', ng-app='', ng-init="textBox='hello, harasser'")
-      input#input.searchboxer(type='text', ng-model='textBox', name='input', placeholder='Hello, Harasser')
-      button#searchBtn.button(ng-model='searchBtn', name='searchBtn', style='margin:-1px 7px 0 2px') Search
+    #wrapper.center-block(style='text-align: center')
+      input#input.searchboxer(type='text', name='input', placeholder='Hello, Harasser')
+      button#searchBtn.button(name='searchBtn', style='margin:-1px 7px 0 2px') Search
       script.
         (function(){
         var input = document.getElementById('input');
