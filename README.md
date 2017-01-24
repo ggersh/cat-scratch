@@ -13,5 +13,5 @@ Python, Twitter API, JavaScript, Node.js, and a handful of frameworks.
 ## Challenges 
 The team overall did not have much experience with web apps, so making everything work together took some time.
 
-What's Next for CatScratch? 
+## What's Next for CatScratch? 
 Cat emojis! :cat:
